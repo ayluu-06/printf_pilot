@@ -27,7 +27,11 @@ int _printf(const char *format, ...)
 			else if (*ptr == '%') /*si, ptr es %*/
 				count += percent(); /*imprime %*/
 			else
-				return (-1);
+			{
+				write(1, "%", 1);
+				write(1, ptr, 1);
+				count += 2;
+			}
 		}
 		else
 			count += write(1, ptr, 1); /*si no es %, imprime char actual*/
