@@ -10,7 +10,7 @@
 
 int charac(char c)
 {
-	return(write(1, &c, 1)); /*1=stdout, &c=dire var c, 1=num char*/
+	return (write(1, &c, 1)); /*1=stdout, &c=dire var c, 1=num char*/
 }
 
 /**
@@ -28,7 +28,7 @@ int string(char *str)
 	{
 		return (-1);
 	}
-	for (i = 0; str[i] != '\0'; i++) /*recorre str con i hasta encontrar el valor nulo*/
+	for (i = 0; str[i] != '\0'; i++) /*recorre str con i hasta encontrar '\0'*/
 	{
 		write(1, &str[i], 1); /*1=stdout, str[count]=,1=*/
 		count++; /*aumenta el contador despues de cada caracter*/
@@ -45,5 +45,6 @@ int string(char *str)
 int percent(void)
 {
 	char c = '%';
-	return(write(1, &c, 1));
+
+	return (write(1, &c, 1));
 }
