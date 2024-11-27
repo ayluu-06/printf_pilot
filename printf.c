@@ -28,9 +28,9 @@ int _printf(const char *format, ...)
 				count += percent(); /*imprime %*/
 			else
 			{
-				write(1, "%", 1);
-				write(1, ptr, 1);
-				count += 2;
+				write(1, "%", 1); /*imprime directamente %*/
+				write(1, ptr, 1); /*imprime el caracter desconocido*/
+				count += 2; /*al imprimir el % mas el car desconocido, aumenta 2*/
 			}
 		}
 		else
