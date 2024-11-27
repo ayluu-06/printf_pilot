@@ -1,22 +1,25 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdarg.h>
+
 /**
  * charac - handles characters %c
- * @args: list with character to print
+ * @c: list with character to print
  * Return: 1 character
  */
 
-int charac(va_list args)
+int charac(char c)
 {
-	char c = va_arg(args, int); /*Toma argumento como char, guarda en c*/
 	return(write(1, &c, 1)); /*1=stdout, &c=dire var c, 1=num char*/
 }
 
 /**
  * string - handles string %s
- * @args: string to print
+ * @str: string to print
  * Return: string
  */
 
-int string(va_list args)
+int string(char *str)
 {
 	int count = 0; /*inicializa count*/
 	int i;
@@ -41,6 +44,6 @@ int string(va_list args)
 
 int percent(void)
 {
-	char c = '%'
-		return(write(1, &c, 1))
+	char c = '%';
+	return(write(1, &c, 1));
 }
