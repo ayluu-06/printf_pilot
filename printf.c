@@ -17,4 +17,23 @@ int _printf(const char *format, ...)
 	}
 	va_start(args, format); /*Inicializa la lista, utilizando el ultimo arg fijo*/
 	for (ptr = format; *ptr != '\0'; ptr++) /*Recorre format hasta encontrar el caracter nulo*/
+	{
+		if (*ptr == '%') /*si ptr es un %*/
+		{
+			ptr++; /*avanza ptr*/
+			switch (*ptr)
+			{
+				case 'c':
+					charac();
+					break;
+				case 's':
+					string();
+					break;
+				case '%':
+					percent();
+					break;
+			}
+		}
+	
+	}
 }

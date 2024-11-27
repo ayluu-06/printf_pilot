@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 int _printf(const char *format, ...);
-int charac(va_list args)
-int string(va_list args)
+int charac(char c);
+int string(char *str);
+int percent(void);
 #endif
